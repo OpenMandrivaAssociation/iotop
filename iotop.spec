@@ -6,6 +6,7 @@ Source0: http://guichaz.free.fr/misc/iotop.py
 License: GPLv2
 Group: Monitoring
 Url: http://guichaz.free.fr/misc/#iotop
+BuildArch: noarch
 
 %description
 iotop is a Python program with a top like UI used to show of behalf of
