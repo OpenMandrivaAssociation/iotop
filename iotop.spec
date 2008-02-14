@@ -5,6 +5,7 @@ Release: %mkrel 1
 Source0: http://guichaz.free.fr/misc/iotop.py
 License: GPLv2
 Group: Monitoring
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Url: http://guichaz.free.fr/misc/#iotop
 BuildArch: noarch
 
