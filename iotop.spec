@@ -1,13 +1,14 @@
 Summary: Display I/O usage of processes in a top like UI
 Name: iotop
 Version: 0
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: http://guichaz.free.fr/misc/iotop.py
 License: GPLv2
 Group: Monitoring
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Url: http://guichaz.free.fr/misc/#iotop
 BuildArch: noarch
+Requires: python
 
 %description
 iotop is a Python program with a top like UI used to show of behalf of
