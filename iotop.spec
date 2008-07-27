@@ -6,6 +6,8 @@ License:	GPLv2
 Group:		Monitoring
 Url:		http://guichaz.free.fr/iotop/
 Source0:	http://guichaz.free.fr/iotop/files/%{name}-%{version}.tar.bz2
+BuildRequires:	zlib
+%py_requires -d
 Requires:	python
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
