@@ -1,14 +1,14 @@
-Name:       iotop
-Version:    0
-Release:    %mkrel 3
-Summary:    Display I/O usage of processes in a top like UI
-License:    GPLv2
-Group:      Monitoring
-Url:        http://guichaz.free.fr/misc/#iotop
-Source0:    http://guichaz.free.fr/misc/iotop.py
-Requires:   python
-BuildArch:  noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+Summary:	Display I/O usage of processes in a top like UI
+Name:		iotop
+Version:	0.2.1
+Release:	%mkrel 1
+License:	GPLv2
+Group:		Monitoring
+Url:		http://guichaz.free.fr/iotop/
+Source0:	http://guichaz.free.fr/iotop/files/%{name}-%{version}.tar.bz2
+Requires:	python
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 iotop is a Python program with a top like UI used to show of behalf of
@@ -16,18 +16,22 @@ which process is the I/O going on. It requires a Linux kernel 2.6.20
 with TASK_IO_ACCOUNTING enabled.
 
 %prep
-%setup -q -c -T
-cp %{SOURCE0} .
+%setup -q
 
 %build
+python setup.py build
 
 %install
 rm -rf %{buildroot}
-install -D -m 755 %{name}.py %{buildroot}%{_bindir}/%{name}
+
+python setup.py install --root=%{buildroot}
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
+%doc NEWS THANKS
 %{_bindir}/%{name}
+%{py_sitedir}/*
+%{_mandir}/man1/*
