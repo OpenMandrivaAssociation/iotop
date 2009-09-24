@@ -1,6 +1,6 @@
 Summary:	Display I/O usage of processes in a top like UI
 Name:		iotop
-Version:	0.3.1
+Version:	0.3.2
 Release:	%mkrel 1
 License:	GPLv2
 Group:		Monitoring
