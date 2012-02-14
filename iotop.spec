@@ -1,6 +1,6 @@
 Summary:	Display I/O usage of processes in a top like UI
 Name:		iotop
-Version:	0.4.3
+Version:	0.4.4
 Release:	%mkrel 1
 License:	GPLv2
 Group:		Monitoring
@@ -10,7 +10,6 @@ BuildRequires:	zlib
 %py_requires -d
 Requires:	python
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 iotop is a Python program with a top like UI used to show of behalf of
@@ -24,12 +23,12 @@ with TASK_IO_ACCOUNTING enabled.
 python setup.py build
 
 %install
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 python setup.py install --root=%{buildroot}
 
 %clean
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
