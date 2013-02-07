@@ -1,2 +1,4 @@
+removed_sources:
+  iotop-0.4.4.tar.bz2: a790a38c9febc2403c2bf3873c960707ef4a121b
 sources:
-  "iotop-0.4.4.tar.bz2": a790a38c9febc2403c2bf3873c960707ef4a121b
+  iotop-0.5.tar.bz2: 4578f6580f9e9ae4769f2634c326a7a4642275a8

@@ -1,7 +1,7 @@
 Summary:	Display I/O usage of processes in a top like UI
 Name:		iotop
-Version:	0.4.4
-Release:	%mkrel 1
+Version:	0.5
+Release:	1
 License:	GPLv2
 Group:		Monitoring
 Url:		http://guichaz.free.fr/iotop/
@@ -23,19 +23,13 @@ with TASK_IO_ACCOUNTING enabled.
 python setup.py build
 
 %install
-%__rm -rf %{buildroot}
-
 python setup.py install --root=%{buildroot}
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc NEWS THANKS
 %{_bindir}/%{name}
 %{py_sitedir}/*
-%{_mandir}/man1/*
+%{_mandir}/man8/*
 
 
 %changelog
