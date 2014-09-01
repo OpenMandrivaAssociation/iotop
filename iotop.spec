@@ -7,7 +7,7 @@ Group:		Monitoring
 Url:		http://guichaz.free.fr/iotop/
 Source0:	http://guichaz.free.fr/iotop/files/%{name}-%{version}.tar.bz2
 BuildRequires:	zlib
-BuildRequires:	python
+BuildRequires:	python-devel
 Requires:	python
 BuildArch:	noarch
 
