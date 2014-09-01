@@ -18,6 +18,8 @@ with TASK_IO_ACCOUNTING enabled.
 
 %prep
 %setup -q
+# fix python3
+sed -i 's/itervalues/values/' setup.py
 
 %build
 python setup.py build
