@@ -1,7 +1,7 @@
 Summary:	Display I/O usage of processes in a top like UI
 Name:		iotop
 Version:	0.6
-Release:	5
+Release:	6
 License:	GPLv2
 Group:		Monitoring
 Url:		https://guichaz.free.fr/iotop/
