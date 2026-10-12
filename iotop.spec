@@ -43,8 +43,7 @@ python setup.py build
 
 %install
 python setup.py install --root=%{buildroot}
-mkdir -p %{buildroot}%{_sbindir}
-mv %{buildroot}%{_bindir}/iotop %{buildroot}%{_sbindir}/iotop
+# sbin is the same directory as bin, so the script is already in place.
 
 %files
 %doc NEWS THANKS
