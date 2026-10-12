@@ -22,23 +22,20 @@ with TASK_IO_ACCOUNTING enabled.
 # setuptools 84 has no distutils install schemes. Put the script in sbin below.
 python - << 'PY'
 from pathlib import Path
-lines = Path("setup.py").read_text().splitlines(True)
-out = []
-skip = False
-for line in lines:
-    if line.startswith("from distutils.core import setup"):
-        out.append("from setuptools import setup\n")
-        continue
-    if line.startswith("from distutils.command import install"):
-        skip = True
-        continue
-    if skip:
-        if line.startswith("setup("):
-            skip = False
-            out.append(line)
-        continue
-    out.append(line)
-Path("setup.py").write_text("".join(out))
+text = Path("setup.py").read_text()
+text = text.replace(
+    "from distutils.core import setup\n",
+    "from setuptools import setup\n",
+)
+text = text.replace(
+    "from distutils.command import install as distutils_install\n",
+    "",
+)
+start = text.find("# Dirty hack")
+end = text.find("setup(")
+if start != -1 and end != -1:
+    text = text[:start] + text[end:]
+Path("setup.py").write_text(text)
 PY
 
 %build
